@@ -1,0 +1,12 @@
+/* styles for tablet portrait view and above */
+#map {
+	width: 70%;
+	margin-left: 30%;
+}
+#places {
+	width: 24%;
+	padding: 0 3%;
+}
+.down-arrow {
+	display: none;
+}

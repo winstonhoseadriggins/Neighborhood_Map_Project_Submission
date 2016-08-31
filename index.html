@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Industrial Parks Map</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" media="(min-width: 768px)" href="css/responsive.css">
+	</head>
+	<body>
+
+		<section id="map"></section>
+
+		<aside id="places">
+			<div id="search-wrap">
+				<input type="text" id="search" data-bind="textInput: locMarkerSearch, valueUpdate: 'keypress', event: { keyup: function(){setMapWithMarker(), resetMap()} }" placeholder="Search here.." autocomplete="off" />
+			</div>
+			<div class="down-arrow" data-bind="click: slideToggle"></div>
+			<div id="listing">
+				<ul data-bind="foreach: indparks">
+					<li data-bind="visible: visible, attr: {id: id}">
+						<span class="indparks-name" data-bind="text: title"></span>
+						<span class="address-line" data-bind="text: streetAddress"></span>
+						<span class="address-line" data-bind="text: cityAddress"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="show-error">
+				<!-- Error will be displayed here, if any, while fetching results from wikipedia -->
+			</div>
+		</aside>
+
+		<footer>
+			<button id="reset" data-bind="click: resetMap">Reset Zoom to center</button>
+		</footer>
+
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+	    <script src="js/lib/knockout-3.4.0.js"></script>
+	    <script src="js/script.js"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARty_MlnLrjywjwawuqZ8c9sTvZQHXYAY&callback=initMap" async defer onerror="googleError()"></script>
+
+	</body>
+</html> 

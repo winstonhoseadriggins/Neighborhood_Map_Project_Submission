@@ -1,0 +1,92 @@
+/* Reset */
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+/* mobile first approach - base styles */
+#map {
+	width: 100%;
+	display: block;
+	height: 100%;
+	position: absolute;
+}
+#places {
+	width: 90%;
+	padding: 2% 5% 0 5%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #fff;
+}
+#listing ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#listing ul li {
+	cursor: pointer;
+	border-bottom: 1px solid #333;
+	padding: 8px 0;
+}
+#listing ul li:last-child {
+	border: none;
+}
+#search {
+	border: 1px solid #666;
+	padding: 5px 10px;
+	border-radius: 4px;
+	margin: 25px 0;
+}
+.indparks-name {
+	color: #333;
+	font-weight: bold;
+	display: block;
+	padding: 0 0 5px 0;
+}
+.address-line {
+	display: block;
+	color: #555;
+}
+#reset {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background: #444;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+}
+.show-error {
+	position: absolute;
+	bottom: -20%;
+	left: 2%;
+	width: 92%;
+	padding: 0 2%;
+	background: red;
+	line-height: 1.5;
+	color: #fff;
+}
+.down-arrow {
+	width: 32px;
+	height: 32px;
+	display: block;
+	cursor: pointer;
+	background: url('../img/arrow-down.png');
+	position: absolute;
+	top: 30px;
+	right: 5%;
+}
+.toggled {
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+/* hiding menu in mobile devices as default */
+@media screen and (max-width: 767px) {
+	#listing {
+		display: none;
+	}
+}
